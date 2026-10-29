@@ -33,7 +33,7 @@ for (const line of lines) {
 
 for (const event of latestTxnId.values()) {
   if (event.status === "success") {
-    total += Number(event.amount);
+    total += Number(String(event.amount).replace(/,/g, ""));
     count += 1;
   }
 }
